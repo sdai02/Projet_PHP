@@ -24,7 +24,7 @@
             <div class="profil"></div>
             <label class="labela" for="">User</label>
         </section>
-        <div class="dia">
+        
         <section class="container">
             <form method="post">
                 
@@ -49,6 +49,6 @@
             </table>
     
         </section>
-        </div>
+        
 </body>
 </html>
