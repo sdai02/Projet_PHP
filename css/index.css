@@ -1,0 +1,33 @@
+.profil{
+    width: 100px;
+    height: 100px;
+    margin-left: 3.5em;
+    margin-top: 1em;
+    border-radius: 50%;
+
+    background: #000000;
+}
+
+.profils{
+    position: absolute;
+/* width: 330px; */
+width: 15%;
+height: 434px;
+left: 20px;
+top: 170px;
+
+background: white;
+opacity: 70%;
+border-radius: 20px;
+}
+.labela{
+    color: black;
+    font-size: 2em;
+}
+.inputC{
+    width: 50%;
+}
+.dia{
+    margin-left: 10em;
+    background: red;
+}
