@@ -25,7 +25,7 @@
             <label class="labela" for="">User</label>
         </section>
         <div class="dia">
-        <section class="container py-5">
+        <section class="container">
             <form method="post">
                 
                 <div class="mb-3">
@@ -34,8 +34,6 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Post</button>
             </form>
-    
-            <hr class="m-5">
     
             <table class="table">
                 <tbody>
