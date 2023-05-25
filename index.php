@@ -28,27 +28,28 @@
         <section class="container">
             <form method="post">
                 
-                <div class="mb-3">
-                    <label for="last_name" class="form-label">Post</label>
+                <div class="container__content">
+                    <div class="user"></div>
                     <input type="text" class="form-control" id="comment" name="comment" placeholder="Comment" >
                 </div>
                 <button type="submit" class="btn btn-primary">Post</button>
             </form>
     
-            <table class="table">
-                <tbody>
+            <hr>
+    
+            
+        </section>
+        <table class="table">
+            <tbody>
                 <?php while ($user = fgetcsv($handle)) : ?>
                     <tr>
                         <td><?= $user[0]; ?></td>
                     </tr>
-                <?php
+                    <?php
                 endwhile;
                 fclose($handle);
                 ?>
-                </tbody>
-            </table>
-    
-        </section>
-        
+            </tbody>
+        </table>
 </body>
 </html>
