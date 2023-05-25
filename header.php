@@ -14,7 +14,7 @@
       <!-- <nav>
             <ul>
                   <li class="nav_u">Logo</li>
-                  <li class="nav_u">Profil</li>
+                  <li class="nav_u">Home</li>
                   <li class="nav_u">Comment</li>
             </ul>
       </nav> -->
