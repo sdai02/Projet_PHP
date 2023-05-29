@@ -8,7 +8,7 @@ require_once "index.php";
     $password = $_POST['password'];
 
 try {
-    $bd = new PDO("mysql:host=localhost;dbname=blog","root", "" );
+    $bd = new PDO(dsn:"mysql:host=localhost:3306;dbname=blog",username:"root",password:"root");
     $bd ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException) {
     echo "Erreur :" .$e->getMessage();
@@ -29,10 +29,16 @@ try {
         $respond =$request -> fetch();
 
         if (is_array($respond)===true) {
-            header("Location: index.php"); 
+            ?>
+            <form action="home.php" method="post">
+                <input type="hidden" name="password" value="<?=($password)?>">
+            </form>
+            <?php
+
+            header("Location: home.php"); 
         }else {
             $error_msg = "Email ou Password invalide";
-            header("Location: connexion.php ? error{$error_msg}");
+            header("Location: index.php ? error{$error_msg}");
         }
    }
 
