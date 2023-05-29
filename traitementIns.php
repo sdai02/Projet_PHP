@@ -6,7 +6,7 @@
 // $password = "";
 
 try {
-    $bd = new PDO("mysql:host=localhost;dbname=blog","root", "" );
+    $bd = new PDO(dsn:"mysql:host=localhost:3306;dbname=blog",username:"root",password:"root");
 } catch (PDOException) {
     echo "Erreur :" .$e->getMessage();
 }
@@ -18,7 +18,7 @@ if($_POST){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $requete = $bd->prepare("INSERT INTO user(first_name, last_name, email, password) VALUES(:first, :last, :email, :password)");
+    $requete = $bd->prepare("INSERT INTO user(first_name, last_name, email,is_admin, password) VALUES(:first, :last, :email, 0,:password)");
     $requete ->execute(
         [
             "first"=>$firstname,
@@ -30,6 +30,6 @@ if($_POST){
 
 }
 
-header("Location:connexion.php");
+header("Location:index.php");
 
 ?>
