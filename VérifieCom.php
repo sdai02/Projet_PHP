@@ -7,8 +7,15 @@ require_once "index.php";
     $email = $_POST['email'];
     $password = $_POST['password'];
 
+       
+$sql = new PDO(dsn:"mysql:host=localhost:3306;dbname=blog",username:"root",password:"root");
+$instruction = "SELECT * FROM `user` WHERE email = :email ";
+$prepare1 = $sql->prepare($instruction);
+$prepare1->execute(array(':email'=> $email));
+
+
 try {
-    $bd = new PDO("mysql:host=localhost;dbname=blog","root", "" );
+    $bd = new PDO(dsn:"mysql:host=localhost:3306;dbname=blog",username:"root",password:"root");
     $bd ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException) {
     echo "Erreur :" .$e->getMessage();
@@ -17,7 +24,7 @@ try {
 
    //Vérifications des données saisies par l'utilisateur
 
-   if ($email!='' && $password!='') {
+   if ($email!='' && $password!='' && $blog = $prepare1->fetch(mode: PDO :: FETCH_ASSOC)) {
 
         //les éléménts à vérifier.
         $request = $bd->prepare("SELECT * FROM user WHERE email=:email AND password=:password");
@@ -29,10 +36,12 @@ try {
         $respond =$request -> fetch();
 
         if (is_array($respond)===true) {
-            header("Location: index.php"); 
+            $_SESSION['id']=$blog['id'];
+            $_SESSION['is_admin']=$blog['is_admin'];
+            header("Location: home.php"); 
         }else {
             $error_msg = "Email ou Password invalide";
-            header("Location: connexion.php ? error{$error_msg}");
+            header("Location: index.php ? error{$error_msg}");
         }
    }
 
