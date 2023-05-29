@@ -3,7 +3,6 @@ $text_comment = $_POST['text_comment'];
 $id_c = $_POST['id_c'];
 $see_more = $_POST['see_more'];
 
-
 ?>
 
 <form action="function/handle_msg_update.php" method="post">

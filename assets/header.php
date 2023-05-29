@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,6 +18,7 @@
                   <li class="nav_u">Logo</li>
                   <a href="http://localhost/Projet_PHP/home.php"><li class="nav_u">Home</li></a>
                   <a href="http://localhost/Projet_PHP/page.php"><li class="nav_u">Comment</li></a>
+
             </ul>
       </nav> 
       

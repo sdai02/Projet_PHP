@@ -38,3 +38,4 @@ $prepare1->execute(array(':id'=> $id));
 
     <a href="deconnexion.php"> <button>Déconnexion</button> </a>
 <?include('page.php')?>
+

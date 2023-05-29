@@ -7,6 +7,7 @@ if(!empty($_POST['title']) && !empty($_POST['text']) ){
     $title = $_POST['title'];
     $text = $_POST['text'];
     $tag = $_POST['tag'];
+
     $id_user = $_POST['id_user'];
 
     $instruction = "INSERT INTO post( id_user_comment, texte, id_tag, title) VALUES (:id, :text, :tag, :title)";
@@ -19,6 +20,7 @@ if(!empty($_POST['title']) && !empty($_POST['text']) ){
 }else{
     header('location:http://localhost/Projet_PHP/home.php?id='.$id_user);
 }
+
 
 
 
