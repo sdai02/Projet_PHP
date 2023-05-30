@@ -21,13 +21,13 @@
             <input type="text" name="last" placeholder="Username">
 
             <label for="">Email</label>
-            <input type="text" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email">
 
             <label for="">Password</label>
             <input type="password" name="password" placeholder="Password">
 
             <input type="submit" value="Valider">
-            <a href="connexion.php">Connexion</a>
+            <a href="index.php">Connexion</a>
         </form>
     </section>
 </body>

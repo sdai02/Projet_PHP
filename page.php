@@ -6,6 +6,7 @@
     
     $is_admin= $_SESSION['is_admin'];
     $_POST['id']= $_SESSION['id'];
+    if(isset($_SESSION['id_user_comment'])){
     $_POST['id_user_comment']= $_SESSION['id_user_comment'];
     
 
@@ -45,7 +46,7 @@
         $_SESSION['id_user_comment']= $blog['id_user_comment'];
       
 
-    };
+    };};
     ?>
     
 
