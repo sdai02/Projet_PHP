@@ -7,7 +7,6 @@
     $is_admin= $_SESSION['is_admin'];
     $_POST['id']= $_SESSION['id'];
    
-    $_POST['id_user_comment']= $_SESSION['id_user_comment'];
     
 
 ?>
@@ -24,9 +23,9 @@
         <form action="tag.php" methode="get">
             <button type="submit" name="tag" value="<?= ($blog['id_tag'])?>"><?=($blog['id_tag'])?></button>
         </form>
-        <form action="comment_page.php" >
+        <form action="comment_page.php" method="post" >
             <button name="see_more">see more</button></a> 
-            <?php $_SESSION['id_p']=$blog['id_p'] ?>
+            <input type="hidden" name="id_p" value="<?=($_SESSION['id_p'] = $blog['id_p'])?>">
         </form>
         
         <form action="post_change.php" method="post">
