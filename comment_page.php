@@ -2,10 +2,10 @@
     session_start();
     $_POST['id']= $_SESSION['id'];
     $_POST['id_user_comment']= $_SESSION['id_user_comment'];
-    $see_more=$_SESSION['id_p'];
+    $see_more = $_SESSION['id_p'];
     $sql = new PDO(dsn:"mysql:host=localhost:3306;dbname=blog",username:"root",password:"root");
     $view = "SELECT * from post p LEFT JOIN comment c on p.id_p = c.id_post_comment WHERE p.id_p = :id ORDER BY created_comment DESC";
-   
+    
     $prepare = $sql->prepare($view);
     $prepare->execute(array(':id'=> $see_more));
 
@@ -36,6 +36,7 @@ while($blog = $prepare->fetch(mode: PDO :: FETCH_ASSOC)){
             <input type="hidden" name="id_comment" value="<?=($blog['id_p'])?>">
             <input type="hidden" name="tag_comment" value="<?= ($blog['id_tag'])?>"></input>
             <button type="submit" value="submit">send</button>
+
         </form>
 
 
