@@ -6,6 +6,7 @@
     
     $is_admin= $_SESSION['is_admin'];
     $_POST['id']= $_SESSION['id'];
+   
     $_POST['id_user_comment']= $_SESSION['id_user_comment'];
     
 

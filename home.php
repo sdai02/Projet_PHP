@@ -3,7 +3,7 @@ include_once('s.php');
 if (isset($_SESSION['$password'])) {
     header('Location: deconnexion.php');
 }
-
+$_POST['id_user_comment']= $_SESSION['id_user_comment'];
 
 $id = $_SESSION['id'];
 $sql = new PDO(dsn:"mysql:host=localhost:3306;dbname=blog",username:"root",password:"root");

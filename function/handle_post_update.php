@@ -6,7 +6,7 @@ $_POST['id']= $_SESSION['id'];
 $_POST['id_user_comment']= $_SESSION['id_user_comment'];
 
 
-if(!empty($_POST['texte']) && !empty($_POST['title']) && isset($_POST['id_p']) && $is_admin == 1||$_POST['id']==$_POST['id_user_comment']){
+if( $is_admin == 1||$_POST['id']==$_POST['id_user_comment']){
     $text = $_POST['text'];
     $id_p = $_POST['id_p'];
     $title = $_POST['title'];
