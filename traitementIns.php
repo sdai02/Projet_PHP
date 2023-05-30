@@ -1,10 +1,5 @@
 <?php
 
-// $first = "";
-// $last = "";
-// $email="";
-// $password = "";
-
 try {
     $bd = new PDO(dsn:"mysql:host=localhost:3306;dbname=blog",username:"root",password:"root");
 } catch (PDOException) {

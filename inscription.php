@@ -27,7 +27,7 @@
             <input type="password" name="password" placeholder="Password">
 
             <input type="submit" value="Valider">
-            <a href="connexion.php">Connexion</a>
+            <p> Vous avez un compte ?<a href="connexion.php">Connexion</a></p>
         </form>
     </section>
 </body>
