@@ -18,10 +18,10 @@
                 <br> 
 
             <label for="">Email</label>
-            <input type="text" name="email" placeholder="Email">
+            <input type="text" name="email" placeholder="Email" required>
 
             <label for="">Password</label>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="Password" required>
 
             <input type="submit" value="Connexion">
             <hr>

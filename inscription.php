@@ -15,16 +15,16 @@
                 <hr>
                 <br> 
             <label for="">First name</label>
-            <input type="text" name="first" placeholder="Username">
+            <input type="text" name="first" placeholder="Username" required>
 
             <label for="">Last name</label>
-            <input type="text" name="last" placeholder="Username">
+            <input type="text" name="last" placeholder="Username" required>
 
             <label for="">Email</label>
-            <input type="email" name="email" placeholder="Email">
+            <input type="email" name="email" placeholder="Email" required>
 
             <label for="">Password</label>
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="Password" required>
 
             <input type="submit" value="Valider">
             <p> Vous avez un compte ?<a href="index.php">Connexion</a></p>
