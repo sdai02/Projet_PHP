@@ -25,7 +25,8 @@
 
             <input type="submit" value="Connexion">
             <hr>
-            <a href="inscription.php">Inscription</a>
+            <p>Vous n'avez pas de compte
+            <a href="inscription.php">Inscription</a></p>
 
         </form>
     </section>
