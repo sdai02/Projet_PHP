@@ -1,9 +1,9 @@
 <?php
-include_once('s.php');
+include ('assets/header.php');
 if (isset($_SESSION['$password'])) {
     header('Location: deconnexion.php');
 }
-$_POST['id_user_comment']= $_SESSION['id_user_comment'];
+
 
 $id = $_SESSION['id'];
 $sql = new PDO(dsn:"mysql:host=localhost:3306;dbname=blog",username:"root",password:"root");
@@ -11,7 +11,7 @@ $instruction = "SELECT * FROM `user` WHERE id = :id ";
 $prepare1 = $sql->prepare($instruction);
 $prepare1->execute(array(':id'=> $id));
 ?>
-    <?php include ('assets/header.php')?>
+    
     <h1>Bienvenue sur le Blog</h1>
     <?php 
     while($blog = $prepare1->fetch(mode: PDO :: FETCH_ASSOC)){

@@ -12,7 +12,7 @@ if( $is_admin == 1||$_POST['id']==$_POST['id_user_comment']){
     $title = $_POST['title'];
 
    
-
+    
     $instruction = "UPDATE `post` SET `texte` = :texte, `title` = :title WHERE `post`.`id_p` = :id_p";
 
     $prepare = $sql->prepare($instruction);

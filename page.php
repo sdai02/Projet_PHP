@@ -1,17 +1,15 @@
 <?php
-    include_once('s.php');
+    include_once ('assets/header.php');
     $sql = new PDO(dsn:"mysql:host=localhost:3306;dbname=blog",username:"root",password:"root");
     $view = "SELECT * from post ORDER BY created DESC";
     $prepare = $sql->query($view);
     
-    $is_admin= $_SESSION['is_admin'];
-    $_POST['id']= $_SESSION['id'];
    
-    $_POST['id_user_comment']= $_SESSION['id_user_comment'];
+   
     
 
 ?>
-<?php include_once ('assets/header.php')?>
+
 
    
     <?php
@@ -24,26 +22,25 @@
         <form action="tag.php" methode="get">
             <button type="submit" name="tag" value="<?= ($blog['id_tag'])?>"><?=($blog['id_tag'])?></button>
         </form>
-        <form action="comment_page.php" >
-            <button name="see_more">see more</button></a> 
-            <?php $_SESSION['id_p']=$blog['id_p'] ?>
+        <form action="comment_page.php" method="post">
+            <button name="id_p" value="<?=($blog['id_p'])?>">see more</button>
         </form>
         
         <form action="post_change.php" method="post">
-        
             <input type="hidden" name="text" value="<?=($blog['texte'])?>">
             <input type="hidden" name="title" value="<?=($blog['title'])?>">
-            <button type="submit">modify</button>
-            <input type="hidden" name="id_p" value="<?=($blog['id_p'])?>">
+            <button type="submit" name="id_p" value="<?=($blog['id_p'])?>">modify</button>
             <input type="hidden" name="id_user_comment" value="<?=($blog['id_user_comment'])?>">
+            
         </form>
-        
+        <? if($_SESSION['is_admin'] == 1 || $_SESSION['id']== $blog['id_user_comment']){ ?>
         <form action="function/handle_delete.php" method="post">
             <button type="submit" name="delete"  value="<?=($blog['id_p'])?>">delete</button>
+            <? $_SESSION['id_user_comment'] =  $blog['id_user_comment']?>
         </form>  
-
+        <? }; ?>
         <?php 
-        $_SESSION['id_user_comment']= $blog['id_user_comment'];
+        
       
 
     };

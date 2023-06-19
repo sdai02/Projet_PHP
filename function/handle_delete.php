@@ -1,11 +1,8 @@
 <?php 
 session_start();
-$is_admin= $_SESSION['is_admin'];
-$_POST['id']= $_SESSION['id'];
-$_POST['id_user_comment']= $_SESSION['id_user_comment'];
-$sql = new PDO(dsn:"mysql:host=localhost:3306;dbname=blog",username:"root",password:"root");
+$sql = new PDO("mysql:host=localhost:3306;dbname=blog","root","root");
 
-if( $is_admin == 1||$_POST['id']==$_POST['id_user_comment']){
+if( $_SESSION['is_admin'] == 1||$_SESSION['id']==$_SESSION['id_user_comment']){
 $delete = $_POST['delete'];
     
 $instruction = 'DELETE c FROM comment c JOIN post on c.id_post_comment= post.id_p AND c.id_post_comment = :id';

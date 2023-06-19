@@ -7,7 +7,7 @@
 
 try {
     $bd = new PDO(dsn:"mysql:host=localhost:3306;dbname=blog",username:"root",password:"root");
-} catch (PDOException) {
+} catch (Exception $e) {
     echo "Erreur :" .$e->getMessage();
 }
 
